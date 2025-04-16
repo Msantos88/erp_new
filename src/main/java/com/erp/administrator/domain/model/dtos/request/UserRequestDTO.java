@@ -5,10 +5,26 @@ public class UserRequestDTO {
     private String emailUser;
     private String password;
 
+    private ProfileRequestDTO profile;
+
+    public UserRequestDTO(){}
+
     public UserRequestDTO(String nameUser, String emailUser, String password) {
         this.nameUser = nameUser;
         this.emailUser = emailUser;
         this.password = password;
+    }
+
+    public UserRequestDTO(ProfileRequestDTO profile) {
+        this.profile = profile;
+    }
+
+    public ProfileRequestDTO getProfile() {
+        return profile;
+    }
+
+    public void setProfile(ProfileRequestDTO profile) {
+        this.profile = profile;
     }
 
     public String getNameUser() {

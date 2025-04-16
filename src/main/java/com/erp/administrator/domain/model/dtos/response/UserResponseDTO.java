@@ -1,15 +1,29 @@
 package com.erp.administrator.domain.model.dtos.response;
 
+import com.erp.administrator.domain.model.entities.Profile;
+
 public class UserResponseDTO {
 
     private String nameUser;
     private String emailUser;
     private String password;
+    private ProfileResponseDTO profile;
 
-    public UserResponseDTO( String nameUser, String emailUser, String password) {
+    public UserResponseDTO(){}
+
+    public UserResponseDTO( String nameUser, String emailUser, String password, ProfileResponseDTO profile ) {
         this.nameUser = nameUser;
         this.emailUser = emailUser;
         this.password = password;
+        this.profile = profile;
+    }
+
+    public ProfileResponseDTO getProfile() {
+        return profile;
+    }
+
+    public void setProfile(ProfileResponseDTO profile) {
+        this.profile = profile;
     }
 
     public String getNameUser() {

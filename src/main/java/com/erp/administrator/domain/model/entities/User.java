@@ -3,7 +3,6 @@ package com.erp.administrator.domain.model.entities;
 
 import jakarta.persistence.*;
 
-import javax.annotation.processing.Generated;
 import java.io.Serializable;
 
 @Entity
@@ -20,6 +19,9 @@ public class User implements Serializable {
     private String emailUser;
     @Column(name = "ds_password", nullable = false)
     private String password;
+    @ManyToOne
+    @JoinColumn(name = "idProfile")
+    private Profile profile;
 
     public User(){};
 
@@ -28,6 +30,18 @@ public class User implements Serializable {
         this.nameUser = nameUser;
         this.emailUser = emailUser;
         this.password = password;
+    }
+
+    public User(Profile profile) {
+        this.profile = profile;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 
     public Long getIdUser() {
