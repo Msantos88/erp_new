@@ -34,7 +34,6 @@ public class UserServiceImpl implements UserService {
         List<Profile> profileList = profileRepository.findAll();
 
         for (Profile p : profileList){
-
            if(p.getNameProfile().equals(requestDto.getProfile().getNameProfile())){
                userEntity.setProfile(profileEntity);
                userEntity = userRepository.save(userEntity);

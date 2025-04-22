@@ -1,8 +1,5 @@
 package com.erp.administrator.domain.model.dtos.request;
 
-
-import java.util.List;
-
 public class ProfileRequestDTO {
     private String nameProfile;
 
