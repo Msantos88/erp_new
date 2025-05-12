@@ -1,5 +1,7 @@
 package com.erp.administrator.domain.model.dtos.request;
 
+import com.erp.administrator.domain.model.entities.Profile;
+
 public class UserRequestDTO {
     private String nameUser;
     private String emailUser;
@@ -9,13 +11,10 @@ public class UserRequestDTO {
 
     public UserRequestDTO(){}
 
-    public UserRequestDTO(String nameUser, String emailUser, String password) {
+    public UserRequestDTO(String nameUser, String emailUser, String password, ProfileRequestDTO profile) {
         this.nameUser = nameUser;
         this.emailUser = emailUser;
         this.password = password;
-    }
-
-    public UserRequestDTO(ProfileRequestDTO profile) {
         this.profile = profile;
     }
 

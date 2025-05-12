@@ -7,23 +7,15 @@ public class UserResponseDTO {
     private String nameUser;
     private String emailUser;
     private String password;
-    private ProfileResponseDTO profile;
+    private String nameProfile;
 
     public UserResponseDTO(){}
 
-    public UserResponseDTO( String nameUser, String emailUser, String password, ProfileResponseDTO profile ) {
+    public UserResponseDTO(String nameUser, String emailUser, String password, String nameProfile) {
         this.nameUser = nameUser;
         this.emailUser = emailUser;
         this.password = password;
-        this.profile = profile;
-    }
-
-    public ProfileResponseDTO getProfile() {
-        return profile;
-    }
-
-    public void setProfile(ProfileResponseDTO profile) {
-        this.profile = profile;
+        this.nameProfile = nameProfile;
     }
 
     public String getNameUser() {
@@ -48,5 +40,13 @@ public class UserResponseDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNameProfile() {
+        return nameProfile;
+    }
+
+    public void setNameProfile(String nameProfile) {
+        this.nameProfile = nameProfile;
     }
 }

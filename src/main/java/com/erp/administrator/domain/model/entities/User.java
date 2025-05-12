@@ -20,28 +20,21 @@ public class User implements Serializable {
     @Column(name = "ds_password", nullable = false)
     private String password;
     @ManyToOne
-    @JoinColumn(name = "idProfile")
+    @JoinColumn(name = "idProfile", referencedColumnName = "id_profile")
     private Profile profile;
+
+    @ManyToOne
+    @JoinColumn(name ="idLicense", referencedColumnName = "id_license")
+    private License license;
 
     public User(){};
 
-    public User(Long idUser, String nameUser, String emailUser, String password) {
+    public User(Long idUser, String nameUser, String emailUser, String password, Profile idProfile) {
         this.idUser = idUser;
         this.nameUser = nameUser;
         this.emailUser = emailUser;
         this.password = password;
-    }
-
-    public User(Profile profile) {
-        this.profile = profile;
-    }
-
-    public Profile getProfile() {
-        return profile;
-    }
-
-    public void setProfile(Profile profile) {
-        this.profile = profile;
+        this.profile = idProfile;
     }
 
     public Long getIdUser() {
@@ -74,5 +67,13 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
     }
 }

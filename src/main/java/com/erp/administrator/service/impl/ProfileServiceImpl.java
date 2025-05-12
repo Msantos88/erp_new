@@ -10,6 +10,8 @@ import com.erp.administrator.utils.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProfileServiceImpl implements ProfileService {
 
@@ -24,5 +26,20 @@ public class ProfileServiceImpl implements ProfileService {
         profileEntity = repository.save(profileEntity);
 
         return Utils.EntityToDTO(profileEntity);
+    }
+
+
+    @Override
+    public List<ProfileResponseDTO> getAllProfiles() {
+
+        List<Profile> listProfile = repository.findAll();
+        List<ProfileResponseDTO> listProfileResponseDTO = null;
+
+        for (Profile p : listProfile){
+            listProfileResponseDTO.add(ProfileMapper.toDto(p));
+        }
+
+        return listProfileResponseDTO;
+
     }
 }

@@ -17,7 +17,7 @@ public class ProfileController {
     @Autowired
     private ProfileServiceImpl service;
 
-    @PostMapping
+    @PostMapping("/savedProfile")
     public ResponseEntity<ProfileResponseDTO> createProfile(@RequestBody ProfileRequestDTO requestDTO){
         ProfileResponseDTO responseDTO = service.createProfile(requestDTO);
         return ResponseEntity.ok(responseDTO);

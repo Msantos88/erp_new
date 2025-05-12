@@ -11,14 +11,14 @@ public class ProfileResponseDTO {
 
     private String descriptionProfile;
 
-    private List<UserRequestDTO> user;
+    private List<UserResponseDTO> users;
 
     public ProfileResponseDTO(){}
 
-    public ProfileResponseDTO(String nameProfile, String descriptionProfile, List<UserRequestDTO> user) {
+    public ProfileResponseDTO(String nameProfile, String descriptionProfile, List<UserResponseDTO> users) {
         this.nameProfile = nameProfile;
         this.descriptionProfile = descriptionProfile;
-        this.user = user;
+        this.users = users;
     }
 
     public String getNameProfile() {
@@ -37,11 +37,11 @@ public class ProfileResponseDTO {
         this.descriptionProfile = descriptionProfile;
     }
 
-    public List<UserRequestDTO> getUser() {
-        return user;
+    public List<UserResponseDTO> getUsers() {
+        return users;
     }
 
-    public void setUser(List<UserRequestDTO> user) {
-        this.user = user;
+    public void setUser(List<UserResponseDTO> user) {
+        this.users = user;
     }
 }

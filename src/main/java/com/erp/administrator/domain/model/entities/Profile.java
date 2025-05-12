@@ -20,13 +20,23 @@ public class Profile {
     private String descriptionProfile;
 
     @OneToMany(mappedBy = "profile")
-    private List<User> user;
+    private List<User> users;
 
     public Profile(){}
 
-    public Profile(String nameProfile, String descriptionProfile) {
+    public Profile(Long idProfile, String nameProfile, String descriptionProfile, List<User> user) {
+        this.idProfile = idProfile;
         this.nameProfile = nameProfile;
         this.descriptionProfile = descriptionProfile;
+        this.users = user;
+    }
+
+    public Long getIdProfile() {
+        return idProfile;
+    }
+
+    public void setIdProfile(Long idProfile) {
+        this.idProfile = idProfile;
     }
 
     public String getNameProfile() {
@@ -43,5 +53,13 @@ public class Profile {
 
     public void setDescriptionProfile(String descriptionProfile) {
         this.descriptionProfile = descriptionProfile;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

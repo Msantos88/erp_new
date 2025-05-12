@@ -17,15 +17,11 @@ public class Utils {
         return responseDTO;
     }
 
-    public static UserResponseDTO converterParaDTO(User userEntity, Profile profileEntity){
+    public static UserResponseDTO converterParaDTO(User userEntity){
         UserResponseDTO responseDTO = new UserResponseDTO();
         responseDTO.setNameUser(userEntity.getNameUser());
         responseDTO.setEmailUser(userEntity.getEmailUser());
-        ProfileResponseDTO profileResponseDTO = new ProfileResponseDTO();
-        profileResponseDTO.setNameProfile(profileEntity.getNameProfile());
-        profileResponseDTO.setDescriptionProfile(profileEntity.getDescriptionProfile());
-
-        responseDTO.setProfile(profileResponseDTO);
+        responseDTO.setNameProfile(userEntity.getProfile().getNameProfile());
 
         return responseDTO;
 
